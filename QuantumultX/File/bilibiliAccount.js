@@ -10,8 +10,16 @@ http-response ^https://app.bilibili.com/x/v2/account/mine\?access_key requires-b
 Surge & QX MITM = app.bilibili.com
 */
 
-let body = $response.body
-body=JSON.parse(body)
-body['data']['sections'].splice(2,1)
-body=JSON.stringify(body)
+let blacklist = ["创作中心", "宅家挑战赛"];
+
+let body = $response.body;
+body = JSON.parse(body);
+
+let sections = body["data"]["sections"];
+
+sections = sections.filter(s => !blacklist.includes(s.title));
+
+body["data"]["sections"] = sections;
+body = JSON.stringify(body);
+
 $done({body})
