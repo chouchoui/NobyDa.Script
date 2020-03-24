@@ -1,8 +1,8 @@
 /*
 京东多合一签到脚本
 
-更新于: 2020.3.17 21:05 v83
-有效接口: 22
+更新于: 2020.3.23 23:50 v86
+有效接口: 22+
 
 该脚本同时兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 如使用JSBox 或 Nodejs, 请自行抓取Cookie填入脚本Key处.
@@ -81,7 +81,7 @@ async function all() {//签到模块相互独立,您可注释某一行以禁用�
   await JingDongCash(stop); //京东现金红包
   await JingDongShoes(stop); //京东鞋靴馆
   await JingDongFood(stop); //京东美食馆
-  //await JingRSeeAds(stop); //金融看广告
+  await JingRSeeAds(stop); //金融看广告
   await JingRongGame(stop); //金融游戏大厅
   await JingDongLive(stop); //京东智能生活馆
   await JingDongClean(stop); //京东清洁馆
@@ -1108,7 +1108,7 @@ function JingDongClean(s) {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded", Cookie: KEY,
       },
-      body: "body=%7B%22riskParam%22%3A%7B%22eid%22%3A%22O5X6JYMZTXIEX4VBCBWEM5PTIZV6HXH7M3AI75EABM5GBZYVQKRGQJ5A2PPO5PSELSRMI72SYF4KTCB4NIU6AZQ3O6C3J7ZVEP3RVDFEBKVN2RER2GTQ%22%2C%22shshshfpb%22%3A%22v1%5C%2FzMYRjEWKgYe%2BUiNwEvaVlrHBQGVwqLx4CsS9PH1s0s0Vs9AWk%2B7vr9KSHh3BQd5NTukznDTZnd75xHzonHnw%3D%3D%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22childActivityUrl%22%3A%22-1%22%7D%2C%22url%22%3A%22%22%2C%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22U39rtBF4Dd%2BujQZNkSd%5C%2FtPoL5Cg8baD1q73iQ%2BA4fQ8aZs%5C%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200561054_30882139_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22Mws14CT%5C%2FvOcaZs%5C%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22geo%22%3A%7B%22lng%22%3A%220.000000%22%2C%22lat%22%3A%220.000000%22%7D%7D&client=apple&clientVersion=8.5.2&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&scope=11&sign=5e20049fbfb8377ede93a1da912b16dd&st=1583942866451&sv=102"
+      body: "body=%7B%22riskParam%22%3A%7B%22eid%22%3A%22O5X6JYMZTXIEX4VBCBWEM5PTIZV6HXH7M3AI75EABM5GBZYVQKRGQJ5A2PPO5PSELSRMI72SYF4KTCB4NIU6AZQ3O6C3J7ZVEP3RVDFEBKVN2RER2GTQ%22%2C%22shshshfpb%22%3A%22v1%5C%2FzMYRjEWKgYe%2BUiNwEvaVlrHBQGVwqLx4CsS9PH1s0s0Vs9AWk%2B7vr9KSHh3BQd5NTukznDTZnd75xHzonHnw%3D%3D%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22childActivityUrl%22%3A%22-1%22%7D%2C%22url%22%3A%22%22%2C%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22v9TYVRbhHwPpSSPNbcKAdJlZ4xzX%5C%2FMxy32c5sfRo%5C%2Fq8aZs%5C%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200561054_31187133_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22M%2BQKQlR6WzAaZs%5C%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22geo%22%3A%7B%22lng%22%3A%220.000000%22%2C%22lat%22%3A%220.000000%22%7D%7D&client=apple&clientVersion=8.5.4&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&scope=11&sign=f6fdebfbbca3dc070d12c21cfa363abe&st=1584621861304&sv=112"
     };
 
     $nobyda.post(JDCUUrl, function(error, response, data) {
@@ -1352,7 +1352,7 @@ function JDPersonalCare(s) {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded", Cookie: KEY,
       },
-      body: "body=%7B%22riskParam%22%3A%7B%22eid%22%3A%22O5X6JYMZTXIEX4VBCBWEM5PTIZV6HXH7M3AI75EABM5GBZYVQKRGQJ5A2PPO5PSELSRMI72SYF4KTCB4NIU6AZQ3O6C3J7ZVEP3RVDFEBKVN2RER2GTQ%22%2C%22shshshfpb%22%3A%22v1%5C%2FzMYRjEWKgYe%2BUiNwEvaVlrHBQGVwqLx4CsS9PH1s0s0Vs9AWk%2B7vr9KSHh3BQd5NTukznDTZnd75xHzonHnw%3D%3D%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22childActivityUrl%22%3A%22https%3A%5C%2F%5C%2Fpro.m.jd.com%5C%2Fmall%5C%2Factive%5C%2FNJ1kd1PJWhwvhtim73VPsD1HwY3%5C%2Findex.html%3FcollectionId%3D294%22%7D%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fpro.m.jd.com%5C%2Fmall%5C%2Factive%5C%2FNJ1kd1PJWhwvhtim73VPsD1HwY3%5C%2Findex.html%3FcollectionId%3D294%22%2C%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22rglrZ7sRx6%5C%2FIqNLp1dDmLtTzbV1z8rZ5bgYbPORaFLkaZs%5C%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200167278_30903072_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22h7%5C%2FZa7aYrp8aZs%5C%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22geo%22%3A%7B%22lng%22%3A%220.000000%22%2C%22lat%22%3A%220.000000%22%7D%7D&client=apple&clientVersion=8.5.4&openudid=1fce88cd05c42fe2b054e846f11bdf33f016d676&scope=11&sign=f1d029460724ed474b5616a5ab03206f&st=1584364265234&sv=122"
+      body: "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22USlKSBdpUtu9LmBovmswgMqd5bsYAAd0sdx90%2BXSrNkaZs%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200167278_31223740_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22JZ2YL%2BBmxQsaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22%22%2C%22fp%22%3A%2258ecdb00c9ea37ac135bef4f25516d09%22%2C%22shshshfp%22%3A%22070d00e4af00b9b55a322d9385c095f8%22%2C%22shshshfpa%22%3A%22328c6185-6f1f-159e-5e93-f58430a23de8-1584977144%22%2C%22shshshfpb%22%3A%22x52DdpoJZmtgGkGyA2TNBQA%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2FNJ1kd1PJWhwvhtim73VPsD1HwY3%2Findex.html%3Futm_source%3Diosapp%26utm_medium%3Dappshare%26utm_campaign%3Dt_335139774%26utm_term%3DCopyURL%26ad_od%3Dshare%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=&area="
     };
 
     $nobyda.post(JDPCUrl, function(error, response, data) {
@@ -1447,10 +1447,10 @@ function JingRSeeAds(s) {
                 if (data.match(/(\"resultCode\":3|先登录)/)) {
                   merge.JRSeeAds.notify = "京东金融-广告: 失败, 原因: Cookie失效‼️"
                   merge.JRSeeAds.fail = 1
-                } else {
-                  merge.JRSeeAds.notify = "京东金融-广告: 失败, 原因: 未知 ⚠️"
-                  merge.JRSeeAds.fail = 1
-                }
+                } //else {
+                  //merge.JRSeeAds.notify = "京东金融-广告: 失败, 原因: 未知 ⚠️"
+                  //merge.JRSeeAds.fail = 1
+                //}
               }
             }
           }
@@ -1730,7 +1730,7 @@ function JingDongFood(s) {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded", Cookie: KEY,
       },
-      body: "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%222tZC6DPgRUDcQS2TiaLg7bz0GjIWCxg6l6lGSY5qpyQaZs%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22signId%5C%22%3A%5C%223TljDz03josaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%7D&client=wh5"
+      body: "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22FXy4qPoGOckBeTSpyYzozEW3M9mj%2BXDDcciQAT4BCBQaZs%2Fn4coLNw%3D%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200149803_31265281_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22Z3x1jBClFqsaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22O5X6JYMZTXIEX4VBCBWEM5PTIZV6HXH7M3AI75EABM5GBZYVQKRGQJ5A2PPO5PSELSRMI72SYF4KTCB4NIU6AZQ3O6C3J7ZVEP3RVDFEBKVN2RER2GTQ%22%2C%22fp%22%3A%22-1%22%2C%22shshshfp%22%3A%22b8ff826674dda95c4258d632e7c5845e%22%2C%22shshshfpa%22%3A%22f6ca1cb3-300a-fef7-ce56-11b2dc685988-1582473660%22%2C%22shshshfpb%22%3A%22ao0pyKirmGbxBzmszs2h%2Fsw%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F43tTmWFv8cBQM6YNtJpq1gCFmCfv%2Findex.html%3FcollectionId%3D249%26un_area%3D20_1806_1810_12325%26lng%3D0%26lat%3D0%22%7D%2C%22siteClient%22%3A%22apple%22%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%220%22%2C%22lat%22%3A%220%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&client=wh5"
     };
 
     $nobyda.post(JDMUrl, function(error, response, data) {
